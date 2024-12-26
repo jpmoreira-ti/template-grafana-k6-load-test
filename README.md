@@ -66,7 +66,31 @@ To get another ways to install k6 check </br>
 
 ## Test Lifecycle
 
-To get how k6 structure scripts are built check: </br>  
+In the lifecycle of a k6 test, a script always runs through these stages in the same order:
+
+- Code in the init context prepares the script, loading files, importing modules, and defining the test lifecycle functions. Required.
+- The setup function runs, setting up the test environment and generating data. Optional.
+- VU code runs in the default or scenario function, running for as long and as many times as the options define. Required.
+- The teardown function runs, postprocessing data and closing the test environment. Optional.
+ 
+<b>Ex:</b>
+```sh
+ // 1. init code
+
+export function setup() {
+  // 2. setup code
+}
+
+export default function (data) {
+  // 3. VU code
+}
+
+export function teardown(data) {
+  // 4. teardown code
+}
+```
+
+To get more about k6 structure scripts, check: </br> 
 - https://grafana.com/docs/k6/latest/using-k6/test-lifecycle/#test-lifecycle 
 
 ## Execution
