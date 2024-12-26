@@ -1,0 +1,89 @@
+# Grafana k6
+
+Grafana k6 is an open-source load testing tool that makes it easy to run performance tests on your applications. It is designed to be easy to use, extensible, and efficient.
+
+## Load test types
+
+Many things can go wrong when a system is under load. The system must run numerous operations simultaneously and respond to different requests from a variable number of users. To prepare for these performance risks, teams use load testing.
+
+But a good load-testing strategy requires more than just executing a single script. Different patterns of traffic create different risk profiles for the application. For comprehensive preparation, teams must test the system against different test types.
+
+### Different tests for different goals
+
+Start with smoke tests, then progress to higher loads and longer durations.
+The main types are as follows. Each type has its own article outlining its essential concepts.
+
+- <b>Smoke tests:</b>
+  validate that your script works and that the system performs adequately under minimal load.
+
+- <b>Average-load:</b>
+  test assess how your system performs under expected normal conditions.
+
+- <b>Stress tests:</b>
+  assess how a system performs at its limits when load exceeds the expected average.
+
+- <b>Soak tests:</b>
+  assess the reliability and performance of your system over extended periods.
+
+- <b>Spike tests:</b>
+  validate the behavior and survival of your system in cases of sudden, short, and massive increases in activity.
+
+- <b>Breakpoint tests:</b>
+  gradually increase load to identify the capacity limits of the system.
+
+## Best Practices for Load Testing
+Load testing is not just about pushing systems to their limits; it’s about understanding their behavior under realistic scenarios. A structured approach ensures reliable results and adds real value. With that in mind, here are the essential guidelines to follow:
+
+- <b>Have a Clear Test Plan:</b> 
+    Define the scope, goals (e.g., stability, scalability), and target endpoints.
+
+- <b>Understand the System:</b> 
+    Analyze architecture, peak traffic, load duration, and any rate limits or constraints.Inform Stakeholders: Notify relevant teams about the testing schedule and potential impacts, like slower response times.
+
+- <b>Avoid Testing on Production:</b> 
+    Test in a dedicated environment to prevent disruptions to live systems.
+
+- <b>Start Small, Scale Gradually:</b> 
+    Begin with a low load to establish a baseline, then incrementally increase load.
+
+- <b>Analyze and Present Results:</b> 
+    Use dashboards or reports to track response times, resource usage, and error rates, and share insights and improvement recommendations.  
+
+## Installation
+
+To install k6, you can follow the instructions below:
+
+### Via Homebrew (macOS)
+
+```sh
+brew install k6
+``` 
+
+### Another ways to Install:
+
+To get another ways to install k6 check </br>
+- https://grafana.com/docs/k6/latest/set-up/install-k6/#install-k6
+
+## Test Lifecycle
+
+To get how k6 structure scripts are built check: </br>  
+- https://grafana.com/docs/k6/latest/using-k6/test-lifecycle/#test-lifecycle 
+
+## Execution
+
+Run the test script with the command:
+
+```sh
+k6 run *.js
+```
+
+Ex:
+
+```sh
+k6 run check-status-code-with-threshold.js
+```
+
+### Other Links
+- [K6 version](https://grafana.com/docs/k6/latest/)
+- [K6 test types](https://grafana.com/docs/k6/latest/testing-guides/test-types/#different-tests-for-different-goals/)
+- [K6 features](https://grafana.com/docs/k6/latest/using-k6/)
