@@ -13,3 +13,8 @@ export default function () {
     
     sleep(1);
 }
+
+// 3. Teardown code
+export function teardown() {
+    console.log("Test finished!")
+ }

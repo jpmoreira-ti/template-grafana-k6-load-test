@@ -2,6 +2,7 @@
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
+// 2. Setup code
 export const options = {
     // Setting thresholds(limits) for response duration
     thresholds: {
@@ -11,7 +12,7 @@ export const options = {
     }
 }
 
-// 2. VU code
+// 3. VU code
 export default function () {
     let res = http.get('https://test.k6.io');
 
@@ -22,3 +23,8 @@ export default function () {
     
     sleep(1);
 }
+
+// 4. Teardown code
+export function teardown() {
+    console.log("Test finished!")
+ }

@@ -68,10 +68,10 @@ To get another ways to install k6 check </br>
 
 In the lifecycle of a k6 test, a script always runs through these stages in the same order:
 
-- Code in the init context prepares the script, loading files, importing modules, and defining the test lifecycle functions. Required.
-- The setup function runs, setting up the test environment and generating data. Optional.
-- VU code runs in the default or scenario function, running for as long and as many times as the options define. Required.
-- The teardown function runs, postprocessing data and closing the test environment. Optional.
+- Code in the init context prepares the script, loading files, importing modules, and defining the test lifecycle functions. <i>Required</i>
+- The setup function runs, setting up the test environment and generating data. <i>Optional</i>
+- VU code runs in the default or scenario function, running for as long and as many times as the options define. <i>Required</i>
+- The teardown function runs, postprocessing data and closing the test environment. <i>Optional</i>
  
 <b>Ex:</b>
 ```sh

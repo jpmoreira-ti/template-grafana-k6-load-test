@@ -2,6 +2,7 @@
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
+// 2. Setup code
 export const options = {
     // Setting VU's(Virtual Users)
     // Number of virtual users to simulate
@@ -18,7 +19,7 @@ export const options = {
     }
 }
 
-// 2. VU code
+// 3. VU code
 export default function () {
     let res = http.get('https://test.k6.io');
 
@@ -29,3 +30,8 @@ export default function () {
     
     sleep(1);
 }
+
+// 4. Teardown code
+export function teardown() {
+    console.log("Test finished!")
+ }
