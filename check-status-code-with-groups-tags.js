@@ -12,11 +12,7 @@ export const options = {
 
     // Setting thresholds(limits) for response duration
     thresholds: {
-        'http_req_duration{group:::GetAllCrocodiles}': [
-            { threshold: 'p(90) < 200', abortOnFail: true, delayAborEval: '10s' }
-        ],
-        'http_req_duration{group:::GetCrocodileById}': [
-            { threshold: 'p(90) < 200', abortOnFail: true, delayAborEval: '10s' },
+        'http_req_duration{type:get-by-id"}': [
             { threshold: 'p(95) < 200', abortOnFail: true, delayAborEval: '10s' }
         ],
         checks: ['rate > 0.99']
@@ -26,7 +22,11 @@ export const options = {
 // 3. VU code
 export default function () {
     group('GetAllCrocodiles', function () {
-        let resGetAllCrocodiles = http.get('https://test-api.k6.io/public/crocodiles/');
+        let resGetAllCrocodiles = http.get('https://test-api.k6.io/public/crocodiles/',{
+            tags: {
+                type: "get-all" 
+            }
+        });
 
         // Asserting the response code
         check(resGetAllCrocodiles, { 
@@ -36,7 +36,11 @@ export default function () {
     });
 
     group('GetCrocodileById', function() {
-        let resGetCrocodileById = http.get('https://test-api.k6.io/public/crocodiles/1/');
+        let resGetCrocodileById = http.get('https://test-api.k6.io/public/crocodiles/1/', {
+            tags: {
+                type: "get-by-id"
+            }
+        });
 
         // Asserting the response code
         check(resGetCrocodileById, { 
