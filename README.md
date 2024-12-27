@@ -111,3 +111,5 @@ k6 run check-status-code-with-threshold.js
 - [K6 version](https://grafana.com/docs/k6/latest/)
 - [K6 test types](https://grafana.com/docs/k6/latest/testing-guides/test-types/#different-tests-for-different-goals/)
 - [K6 features](https://grafana.com/docs/k6/latest/using-k6/)
+- [K6 JS libs](https://jslib.k6.io/)
+- [K6 API Crocodiles](https://test-api.k6.io/public/crocodiles/1/)
