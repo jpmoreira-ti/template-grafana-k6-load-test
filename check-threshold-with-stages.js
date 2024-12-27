@@ -18,9 +18,9 @@ export const options = {
     // Setting thresholds(limits) for response duration
     thresholds: {
         // Threshold for failure rate (less than 1%)
-        http_req_failed: ['rate<0.01'], 
+        http_req_failed: ['rate < 0.01'], 
         // 95th percentile of request duration should be below 300ms
-        http_req_duration: ['p(95)<300'], 
+        http_req_duration: ['p(95) < 300'], 
     }
 }
 

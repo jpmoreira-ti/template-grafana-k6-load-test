@@ -5,17 +5,19 @@ import { check, sleep } from 'k6';
 // 2. Setup code
 export const options = {
     // Number of virtual users to simulate
-    vus: 5,
-    
+    vus: 15,
+
     // Total duration of the test (in seconds)
     duration: '2s',  
 
     // Setting thresholds(limits) for response duration
     thresholds: {
-        // Threshold for failure rate (less than 1%)
-        http_req_failed: ['rate<0.01'], 
-        // 95th percentile of request duration should be below 200ms
-        http_req_duration: ['p(95)<200'], 
+        // 'p(90)<150' ensures that 90% of the requests have a duration below 200ms.
+        // 'p(95)<150' ensures that 95% of the requests have a duration below 150ms.
+        http_req_duration: [
+            { threshold: 'p(90) < 200', abortOnFail: true },
+            { threshold: 'p(95) < 150', abortOnFail: true }
+        ]
     }
 }
 
