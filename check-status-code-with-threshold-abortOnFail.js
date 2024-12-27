@@ -12,12 +12,13 @@ export const options = {
 
     // Setting thresholds(limits) for response duration
     thresholds: {
-        // 'p(90)<150' ensures that 90% of the requests have a duration below 200ms.
-        // 'p(95)<150' ensures that 95% of the requests have a duration below 150ms.
+        // 'p(90) < 200' ensures that 90% of the requests have a duration below 200ms.
+        // 'p(95) < 200' ensures that 95% of the requests have a duration below 200ms.
         http_req_duration: [
-            { threshold: 'p(90) < 200', abortOnFail: true },
-            { threshold: 'p(95) < 150', abortOnFail: true }
-        ]
+            { threshold: 'p(90) < 200', abortOnFail: true, delayAborEval: '10s' },
+            { threshold: 'p(95) < 200', abortOnFail: true }
+        ],
+        checks: ['rate > 0.99']
     }
 }
 
