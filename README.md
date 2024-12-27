@@ -59,7 +59,7 @@ To install k6, you can follow the instructions below:
 brew install k6
 ``` 
 
-### Another ways to Install:
+### Other ways to Install
 
 To get another ways to install k6 check </br>
 - https://grafana.com/docs/k6/latest/set-up/install-k6/#install-k6
@@ -95,16 +95,15 @@ To get more about k6 structure scripts, check: </br>
 
 ## Execution
 
-Run the test script with the command:
-
-```sh
-k6 run *.js
-```
-
-Ex:
+Run the test script with the commands:
 
 ```sh
 k6 run check-status-code-with-threshold.js
+```
+
+Run with envs:
+```sh
+k6 run -e URL=https://test-api.k6.io/public/crocodiles/1/ check-status-code-with-env.js --duration 5s --vus 10
 ```
 
 ### Other Links
