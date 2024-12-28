@@ -110,10 +110,24 @@ Run with envs:
 k6 run -e URL=https://test-api.k6.io/public/crocodiles/1 check-status-code-with-env.js --duration 5s --vus 10
 ```
 
-### Other Links
+## Extras
+To make analyses on code using ESLint, run the command:
+
+```sh
+npm run lint
+```
+
+or 
+
+```sh
+npm run lint:fix
+```
+
+### Links
 - [K6 version](https://grafana.com/docs/k6/latest/)
 - [K6 test types](https://grafana.com/docs/k6/latest/testing-guides/test-types/#different-tests-for-different-goals/)
 - [K6 features](https://grafana.com/docs/k6/latest/using-k6/)
 - [K6 JS libs](https://jslib.k6.io/)
 - [K6 Test API](https://test-api.k6.io/)
 - [K6 Executors](https://grafana.com/docs/k6/latest/using-k6/scenarios/executors/)
+- [ESLint](https://eslint.org/docs/latest/use/configure/rules)

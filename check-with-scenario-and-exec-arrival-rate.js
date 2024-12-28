@@ -1,6 +1,5 @@
 // 1. Init code
 import http from 'k6/http';
-import { sleep } from 'k6';
 
 // 2. Setup code
 export const options = {

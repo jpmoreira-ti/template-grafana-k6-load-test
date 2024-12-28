@@ -1,6 +1,6 @@
 // 1. Init code
 import http from 'k6/http';
-import { check, sleep } from 'k6';
+import { check, sleep, __ENV } from 'k6';
 
 // 2. Setup code
 export const options = {
@@ -34,4 +34,4 @@ export default function () {
 // 4. Teardown code
 export function teardown() {
     console.log("Test finished!")
- }
+}

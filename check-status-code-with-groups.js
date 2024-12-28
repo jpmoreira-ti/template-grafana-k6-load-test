@@ -50,4 +50,4 @@ export default function () {
 // 4. Teardown code
 export function teardown() {
     console.log("Test finished!")
- }
+}

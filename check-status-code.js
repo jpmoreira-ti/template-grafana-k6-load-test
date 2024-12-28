@@ -17,4 +17,4 @@ export default function () {
 // 3. Teardown code
 export function teardown() {
     console.log("Test finished!")
- }
+}
