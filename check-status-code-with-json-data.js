@@ -7,7 +7,7 @@ import { SharedArray } from 'k6/data'
 export const options = {
     stages: [
         // ramp up
-        {duration: '1s', target: 1 },
+        {duration: '5s', target: 5 },
         // load 
         {duration: '5s', target: 5 },
         // ramp up
