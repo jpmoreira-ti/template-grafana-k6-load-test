@@ -76,17 +76,21 @@ In the lifecycle of a k6 test, a script always runs through these stages in the 
 <b>Ex:</b>
 ```sh
  // 1. init code
+ import http from 'k6/http';
 
-export function setup() {
-  // 2. setup code
+// 2. setup code
+export const options {
+  // Code here
 }
 
+// 3. VU code
 export default function (data) {
-  // 3. VU code
+  // Code here
 }
 
+// 4. teardown code
 export function teardown(data) {
-  // 4. teardown code
+  // Code here
 }
 ```
 
@@ -103,7 +107,7 @@ k6 run check-status-code-with-threshold.js
 
 Run with envs:
 ```sh
-k6 run -e URL=https://test-api.k6.io/public/crocodiles/1/ check-status-code-with-env.js --duration 5s --vus 10
+k6 run -e URL=https://test-api.k6.io/public/crocodiles/1 check-status-code-with-env.js --duration 5s --vus 10
 ```
 
 ### Other Links
