@@ -1,6 +1,7 @@
 // 1. Init code
 import http from 'k6/http';
 import { check, group, sleep } from 'k6';
+import { SharedArray }  from 'k6/data';
 
 // 2. Setup code
 export const options = {
@@ -19,6 +20,10 @@ export const options = {
     }
 }
 
+const data = new SharedArray('Read json data', function(){
+    return JSON.parse(open('./data/data.json')).crocodiles
+})
+
 // 3. VU code
 export default function () {
     group('GetAllCrocodiles', function () {
@@ -36,7 +41,9 @@ export default function () {
     });
 
     group('GetCrocodileById', function() {
-        let resGetCrocodileById = http.get('https://test-api.k6.io/public/crocodiles/1/', {
+        const crocodileId = data[Math.floor(Math.random() * data.length)].id
+        console.log(crocodileId)
+        let resGetCrocodileById = http.get(`https://test-api.k6.io/public/crocodiles/${crocodileId}/`, {
             tags: {
                 type: "get-by-id"
             }
