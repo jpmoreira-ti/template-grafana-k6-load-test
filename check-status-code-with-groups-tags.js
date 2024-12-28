@@ -21,7 +21,7 @@ export const options = {
 }
 
 const data = new SharedArray('Read json data', function(){
-    return JSON.parse(open('./data/data.json')).crocodiles
+    return JSON.parse(open('./data/crocodiles.json')).crocodiles
 })
 
 // 3. VU code
