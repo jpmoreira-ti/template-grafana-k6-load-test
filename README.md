@@ -53,13 +53,13 @@ Load testing is not just about pushing systems to their limits; it’s about und
 
 To install k6, you can follow the instructions below:
 
-### Via Homebrew (macOS)
+#### Via Homebrew (macOS)
 
 ```sh
 brew install k6
 ``` 
 
-### Other ways to Install
+#### Other ways to Install
 
 To get another ways to install k6 check </br>
 - https://grafana.com/docs/k6/latest/set-up/install-k6/#install-k6
@@ -99,31 +99,47 @@ To get more about k6 structure scripts, check: </br>
 
 ## Execution
 
-Run the test script with the commands:
-
+#### Run the test script with the commands:
 ```sh
 k6 run check-status-code-with-threshold.js
 ```
 
-Run with envs:
+#### Run with envs:
 ```sh
 k6 run -e URL=https://test-api.k6.io/public/crocodiles/1 check-status-code-with-env.js --duration 5s --vus 10
 ```
 
+#### Run with dashboard:
+```sh
+K6_WEB_DASHBOARD=true k6 run -e URL=https://test-api.k6.io/public/crocodiles/1 check-status-code-with-env.js --duration 5s --vus 10
+```
+
+or 
+```sh
+K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT=./reports/report-full.html k6 run -e URL=https://test-api.k6.io/public/crocodiles/1 check-status-code-with-env.js --duration 5s --vus 10
+```
+
+## Report and Dashboard
+#### Using `K6_WEB_DASHBOARD flag`
+- The dashboard will be available on http://127.0.0.1:5665/ address during the tes execution
+
+#### Using `handleSummary() function` on the script example check-status-code-with-report
+- The report will be available on `reports` folder
+
 ## Extras
 To perform code analysis using ESLint, run the commands:
 
-Install node modules
+#### Install node modules
 ```sh
 npm install
 ```
 
-Check warnings on code
+#### Check warnings on code
 ```sh
 npm run lint
 ```
 
-Fix all of warnings on code
+#### Fix all of warnings on code
 ```sh
 npm run lint:fix
 ```

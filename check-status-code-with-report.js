@@ -4,7 +4,12 @@ import { check, sleep } from 'k6';
 import { htmlReport } from "https://raw.githubusercontent.com/benc-uk/k6-reporter/main/dist/bundle.js";
 import { textSummary } from "https://jslib.k6.io/k6-summary/0.0.1/index.js";
 
-// 2. VU code
+export const options = {
+    vus: 1,
+    duration: '30s'
+}
+
+// VU code
 export default function () {
     let res = http.get('https://test.k6.io');
 
@@ -22,7 +27,7 @@ export function handleSummary(data) {
     const reportTitle = `Load Testing Report - ${currentDateTime}`;
 
     return {
-        "./reports/teste_k6.html": htmlReport(data, { title: reportTitle }),
+        "./reports/k6-report.html": htmlReport(data, { title: reportTitle }),
         stdout: textSummary(data, { indent: " ", enableColors: true })
     };
 }
