@@ -115,4 +115,5 @@ k6 run -e URL=https://test-api.k6.io/public/crocodiles/1 check-status-code-with-
 - [K6 test types](https://grafana.com/docs/k6/latest/testing-guides/test-types/#different-tests-for-different-goals/)
 - [K6 features](https://grafana.com/docs/k6/latest/using-k6/)
 - [K6 JS libs](https://jslib.k6.io/)
-- [K6 API Crocodiles](https://test-api.k6.io/public/crocodiles/1/)
+- [K6 Test API](https://test-api.k6.io/)
+- [K6 Executors](https://grafana.com/docs/k6/latest/using-k6/scenarios/executors/)
