@@ -19,7 +19,7 @@ export default function () {
     sleep(0.5);
 }
 
-// 4. Teardown code
+// teardown code
 export function teardown() {
-    console.log("Test finished!")
+    console.log('Test has finished!')
 }

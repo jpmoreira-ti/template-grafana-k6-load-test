@@ -19,7 +19,7 @@ export default function () {
     http.get('https://test-api.k6.io/public/crocodiles/');
 }
 
-// 4. Teardown code
+// teardown code
 export function teardown() {
-    console.log("Test finished!")
+    console.log('Test has finished!')
 }

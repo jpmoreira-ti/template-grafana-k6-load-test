@@ -48,3 +48,9 @@ export default function() {
         'Token was successfully created': (r) => r.json('acess') !== ''
     });
 }
+
+// teardown code
+export function teardown() {
+    console.log('Test has finished!')
+}
+

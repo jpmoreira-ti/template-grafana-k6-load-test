@@ -45,3 +45,8 @@ export default function() {
         'Status code should be 200': (r) => r.status === 200
     });
 }
+
+// teardown code
+export function teardown() {
+    console.log('Test has finished!')
+}

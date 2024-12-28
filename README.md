@@ -135,4 +135,5 @@ npm run lint:fix
 - [K6 JS libs](https://jslib.k6.io/)
 - [K6 Test API](https://test-api.k6.io/)
 - [K6 Executors](https://grafana.com/docs/k6/latest/using-k6/scenarios/executors/)
+- [K6 Report](https://github.com/benc-uk/k6-reporter)
 - [ESLint](https://eslint.org/docs/latest/use/configure/rules)
