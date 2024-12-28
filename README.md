@@ -111,14 +111,19 @@ k6 run -e URL=https://test-api.k6.io/public/crocodiles/1 check-status-code-with-
 ```
 
 ## Extras
-To make analyses on code using ESLint, run the command:
+To perform code analysis using ESLint, run the commands:
 
+Create package.json file
+```sh
+npm init
+```
+
+Check warnings on code
 ```sh
 npm run lint
 ```
 
-or 
-
+Fix all of warnings on code
 ```sh
 npm run lint:fix
 ```
