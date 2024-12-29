@@ -9,7 +9,7 @@ export default [
             "no-console": "off",
             "indent": ["error", 4]
         },
-        files: ["*.js"],
+        files: ["scripts/*.js"],
         ignores: ["**/*.config.js", "!**/eslint.config.js", "*.json"],
     }
 ];

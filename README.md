@@ -106,17 +106,47 @@ k6 run check-status-code-with-threshold.js
 
 #### Run with envs:
 ```sh
-k6 run -e URL=https://test-api.k6.io/public/crocodiles/1 check-status-code-with-env.js --duration 5s --vus 10
+k6 run -e URL=https://test-api.k6.io/public/crocodiles/1 scripts/check-status-code-with-env.js --duration 5s --vus 10
 ```
 
 #### Run with dashboard:
 ```sh
-K6_WEB_DASHBOARD=true k6 run -e URL=https://test-api.k6.io/public/crocodiles/1 check-status-code-with-env.js --duration 5s --vus 10
+K6_WEB_DASHBOARD=true k6 run -e URL=https://test-api.k6.io/public/crocodiles/1 scripts/check-status-code-with-env.js --duration 5s --vus 10
 ```
 
 or 
 ```sh
-K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT=./reports/report-full.html k6 run -e URL=https://test-api.k6.io/public/crocodiles/1 check-status-code-with-env.js --duration 5s --vus 10
+K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT=./reports/report-full.html k6 run -e URL=https://test-api.k6.io/public/crocodiles/1 scripts/check-status-code-with-env.js --duration 5s --vus 10
+```
+
+#### Run in Grafana Cloud
+
+```sh
+k6 cloud login --token <TOKEN>
+```
+
+```sh
+k6 cloud scripts/script_name.js 
+```
+
+#### Run in AWS Cloud
+
+```sh
+k6 cloud login --token <TOKEN>
+```
+
+```sh
+k6 cloud scripts/script_name.js 
+```
+
+#### Run in GitHub Actions
+
+```sh
+k6 cloud login --token <TOKEN>
+```
+
+```sh
+k6 cloud scripts/script_name.js 
 ```
 
 ## Report and Dashboard
