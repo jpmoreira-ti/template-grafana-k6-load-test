@@ -52,7 +52,7 @@ export function handleSummary(data) {
     const reportTitle = `Load Testing Report - ${currentDateTime}`;
 
     return {
-        "index.html": htmlReport(data, { title: reportTitle }),
+        "./reports/k6-report.html": htmlReport(data, { title: reportTitle }),
         stdout: textSummary(data, { indent: " ", enableColors: true })
     };
 }

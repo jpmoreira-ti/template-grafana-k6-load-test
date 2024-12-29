@@ -31,9 +31,9 @@ jobs:
             ./scripts/check-threshold-with-stages-github-actions-cloud.js
           cloud-run-locally: false
 
-    - name: "Move k6-report to reports folder"
+    - name: List reports directory
       run: |
-         ls & mv index.html reports      
+        cd reports && ls   
 
     - name: Upload k6 report
       if: always()
