@@ -33,7 +33,7 @@ jobs:
 
     - name: "Move k6 report to reports folder"
       run: |
-         ls && mkdir reports && mv index.html reports      
+         ls && mkdir reports && mv k6-report.html reports      
 
     - name: Upload k6 report
       if: always()
