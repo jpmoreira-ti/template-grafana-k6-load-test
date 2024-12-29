@@ -48,6 +48,6 @@ export default function () {
 // teardown code
 export function handleSummary(data) {
     return {
-        "k6-report.html": htmlReport(data)
+        "index.html": htmlReport(data)
     };
 }
