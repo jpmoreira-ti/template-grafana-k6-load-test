@@ -7,9 +7,11 @@ on:
   pull_request:
     branches:
       - main
+  schedule:
+    - cron: '0 11 * * *'  
 
 jobs:
-  k6-test:
+  k6-tests:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,11 +25,18 @@ jobs:
           path: |
             ./scripts/check-threshold-with-stages-github-actions-cloud.js
           cloud-run-locally: false
-          cloud-comment-on-pr: true  
+          cloud-comment-on-pr: true
 
     - name: Upload k6 report
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: k6-report
-        path: ./reports/k6-report.html
+        path: ./reports/k6-report.html 
+        
+    - name: Download k6 report
+      if: always()
+      uses: actions/download-artifact@v4
+      with:
+        name: k6-report
+        path: ./reports/k6-report.html    

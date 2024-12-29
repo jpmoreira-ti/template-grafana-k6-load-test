@@ -183,3 +183,4 @@ npm run lint:fix
 - [K6 Executors](https://grafana.com/docs/k6/latest/using-k6/scenarios/executors/)
 - [K6 Report](https://github.com/benc-uk/k6-reporter)
 - [ESLint](https://eslint.org/docs/latest/use/configure/rules)
+- [K6 GitHub Actions](https://github.com/marketplace/actions/run-grafana-k6-tests)

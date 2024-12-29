@@ -1,6 +1,8 @@
 // 1. Init code
 import http from 'k6/http';
 import { check, sleep } from 'k6';
+import { htmlReport } from "https://raw.githubusercontent.com/benc-uk/k6-reporter/main/dist/bundle.js";
+import { textSummary } from "https://jslib.k6.io/k6-summary/0.0.1/index.js";
 
 // 2. Setup code
 export const options = {
@@ -45,6 +47,12 @@ export default function () {
 }
 
 // teardown code
-export function teardown() {
-    console.log('Test has finished!')
+export function handleSummary(data) {
+    const currentDateTime = new Date().toLocaleString();
+    const reportTitle = `Load Testing Report - ${currentDateTime}`;
+
+    return {
+        "./reports/k6-report.html": htmlReport(data, { title: reportTitle }),
+        stdout: textSummary(data, { indent: " ", enableColors: true })
+    };
 }
