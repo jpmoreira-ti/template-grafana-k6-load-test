@@ -131,13 +131,13 @@ k6 cloud scripts/script_name.js
 
 #### Run in AWS Cloud
 
-```sh
-k6 cloud login --token <TOKEN>
-```
-
-```sh
-k6 cloud scripts/script_name.js 
-```
+- Configure `buildspec.yml` file on the root path;
+- Upload code to your GitHub Repository;
+- Log on your AWS Account;
+- Select CodeBuild Service;
+- Create a Project;
+- Run Project;
+- Analyses the results;
 
 #### Run in GitHub Actions
 
