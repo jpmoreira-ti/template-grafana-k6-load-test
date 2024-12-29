@@ -9,6 +9,6 @@ phases:
         commands:
           - echo Run perfomance test
           - docker run -i loadimpact/k6 run - <scripts/check-threshold-with-stages-aws-cloud.js
-    post-build:
+    post_build:
         commands:
           - echo perfomance test completed
