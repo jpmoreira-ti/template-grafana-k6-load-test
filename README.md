@@ -198,3 +198,6 @@ npm run lint:fix
 - [K6 GitHub Actions](https://github.com/marketplace/actions/run-grafana-k6-tests/)
 - [k6 Web Application Perfomance Tests](https://k6.io/hybrid-performance-testing/)
 - [k6 Core Web Vitals](https://web.dev/explore/learn-core-web-vitals?hl=pt-br)
+- [k6 metrics](https://dev.to/marlo2222/entendendo-as-metricas-do-k6-parte-1-4kig)
+- [k6 metrics](https://dev.to/marlo2222/entendendo-as-metricas-do-k6-parte-2-3053)
+- [k6 metrics](https://dev.to/marlo2222/entendendo-as-metricas-do-k6-parte-3-m1g)
