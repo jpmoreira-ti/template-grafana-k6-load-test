@@ -149,6 +149,18 @@ k6 cloud login --token <TOKEN>
 k6 cloud scripts/script_name.js 
 ```
 
+#### Run Web Applications Perfomance Test - Type Browser
+
+```sh
+K6_BROWSER_HEADLESS=false k6 run scripts/web-application-perfomance-browser-test.js
+```
+
+#### Run Web Applications Perfomance Test - Type Hybrid (Browser and Protocol)
+
+```sh
+K6_BROWSER_HEADLESS=true k6 run scripts/web-application-perfomance-hybrid-browser-and-protocol-test.js
+```
+
 ## Report and Dashboard
 #### Using `K6_WEB_DASHBOARD flag`
 - The dashboard will be available on http://127.0.0.1:5665/ address during the tes execution
@@ -181,6 +193,8 @@ npm run lint:fix
 - [K6 JS libs](https://jslib.k6.io/)
 - [K6 Test API](https://test-api.k6.io/)
 - [K6 Executors](https://grafana.com/docs/k6/latest/using-k6/scenarios/executors/)
-- [K6 Report](https://github.com/benc-uk/k6-reporter)
-- [ESLint](https://eslint.org/docs/latest/use/configure/rules)
-- [K6 GitHub Actions](https://github.com/marketplace/actions/run-grafana-k6-tests)
+- [K6 Report](https://github.com/benc-uk/k6-reporter/)
+- [ESLint](https://eslint.org/docs/latest/use/configure/rules/)
+- [K6 GitHub Actions](https://github.com/marketplace/actions/run-grafana-k6-tests/)
+- [k6 Web Application Perfomance Tests](https://k6.io/hybrid-performance-testing/)
+- [k6 Core Web Vitals](https://web.dev/explore/learn-core-web-vitals?hl=pt-br)
